@@ -1,0 +1,83 @@
+.head-img {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border: 0.05rem solid #103160;
+}
+
+.head-head {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: #103160;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2.00rem;
+  color: #fff;
+}
+
+.head-title-G {
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.head-title-all {
+  font-size: 3.00rem;
+  color: #fff;
+}
+
+.head-subtitle {
+  padding-top: 0.50rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #0074c7;
+}
+
+@media screen and (max-width:900px) {
+  h3 { font-size: 1.75rem; }
+  .head-title-G { font-size: 3.50rem; }
+  .head-title-all { font-size: 2.75rem; }
+}
+
+@media screen and (max-width:850px) {
+  h3 { font-size: 1.50rem; }
+  .head-title-G { font-size: 3.25rem; }
+  .head-title-all { font-size: 2.50rem; }
+}
+
+@media screen and (max-width:600px) {
+  h3 { font-size: 1.25rem; }
+  .head-title-G { font-size: 3.00rem; }
+  .head-title-all { font-size: 2.25rem; }
+}
+
+@media screen and (max-width:540px) {
+  h3 { font-size: 1.00rem; }
+  .head-title-G { font-size: 2.75rem; }
+  .head-title-all { font-size: 2.00rem; }
+}
+
+@media screen and (max-width:480px) {
+  h3 { font-size: 0.75rem; }
+  .head-title-G { font-size: 2.50rem; }
+  .head-title-all { font-size: 1.75rem; }
+}
+
+.encabezado {
+  ion-grid {
+    background: #ddd;
+  }
+}
+
+ion-content {
+  --background: #fff;
+}
+
+.content {
+  padding: 2.0rem;
+  text-align: justify;
+}

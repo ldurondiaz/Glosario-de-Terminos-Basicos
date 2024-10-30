@@ -1,0 +1,31 @@
+ion-tab-bar {
+  background-color: #103160;
+}
+
+ion-tab-button {
+  background-color: #103160;
+  ion-icon {
+    color: #fff;
+  }
+  ion-label {
+    color: #fff;
+  }
+}
+
+ion-tab-button:hover {
+  ion-icon {
+    color: #67b7e9;
+  }
+  ion-label {
+    color: #67b7e9;
+  }
+}
+
+.tab-selected {
+  ion-icon {
+    color: #67b7e9;
+  }
+  ion-label {
+    color: #67b7e9;
+  }
+}

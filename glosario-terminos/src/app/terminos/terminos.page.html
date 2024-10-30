@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezado">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="head-img" size-sm="12" size-md="3" size-lg="3" size-xl="3" size="12">
+          <img src="assets/img/Logo_INEGI.jpg" width="100%" alt="Logo de INEGI" title="Logo de INEGI" />
+        </ion-col>
+        <ion-col class="head-head" size-sm="12" size-md="9" size-lg="9" size-xl="9" size="12">
+          <h3>Ordenamiento Territorial y Desarrollo Urbano</h3>
+          <h3>
+            <span class="head-title-G">G</span>
+            <span class="head-title-all">losario de Términos Básicos</span>
+          </h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="head-subtitle">
+          Términos
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <ion-toolbar class="buscar">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-searchbar
+          value=""
+          placeholder="Buscar"
+          [debounce]="0" (ionInput)="filtro($event)">
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ul class="lista-horizontal" id="link-list">
+            @for (letra of letras; track $index) {
+              <li (mouseover)="irEncabezadoLetra(letra)"><a>{{letra}}</a></li>
+            }
+          </ul>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<!--ion-content [fullscreen]="true"-->
+<ion-content>
+  <ion-grid>
+    <ion-accordion-group>
+      @for (item of itemsResult; track $index) {
+        @if (!compararLetras(item.letra, letra)) {
+          <ion-row>
+            <ion-col size="12">
+              <ion-item-divider>
+                <ion-label id="{{item.letra}}">{{item.letra}}</ion-label>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          {{cambiarLetra(item.letra)}}
+        }
+        <ion-row>
+          <ion-col>
+            <ion-accordion value="{{item.id}}" toggleIconSlot="end">
+              <ion-item slot="header">
+                <ion-chip>
+                  <ion-avatar>
+                    {{item.letra}}
+                  </ion-avatar>
+                  <ion-label>{{item.concepto}}</ion-label>
+                </ion-chip>
+              </ion-item>
+              <div class="ion-padding" slot="content" style="background: #eee;">
+                <ion-card>
+                  <ion-card-content>
+                    {{item.descripcion}}<!--sup>{{item.numero}}</!sup-->
+                    <div class="fuente"><label>Fuente: </label>{{item.fuente}}</div>
+                    @for (item of item.listaSitiosWeb; track item.url; let idx = $index) {
+                      @if(item.url !== "") {
+                        <!--p>indice: {{idx}}</!--p-->
+                        <div class="sitioweb"><label>Sitio web: </label>
+                          <a [href]="getSafeUrl(item.url)">{{item.url}}</a>
+                        </div>
+                      }
+                    }
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-accordion>
+          </ion-col>
+        </ion-row>
+      }
+    </ion-accordion-group>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezado">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="head-img" size-sm="12" size-md="3" size-lg="3" size-xl="3" size="12">
+          <img src="assets/img/Logo_INEGI.jpg" width="100%" alt="Logo de INEGI" title="Logo de INEGI" />
+        </ion-col>
+        <ion-col class="head-head" size-sm="12" size-md="9" size-lg="9" size-xl="9" size="12">
+          <h3>Ordenamiento Territorial y Desarrollo Urbano</h3>
+          <h3>
+            <span class="head-title-G">G</span>
+            <span class="head-title-all">losario de Términos Básicos</span>
+          </h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="head-subtitle">
+          Documentos
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Documento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div #pdfViewer>
+    <canvas></canvas>
+  </div>
+
+</ion-content>
